@@ -9,10 +9,7 @@ int main(int argc, char **argv)
 {
 #endif
     webview_t w;
-    w = webview_create(false, nullptr);
-    webview_set_size(w, 1000, 700, WEBVIEW_HINT_NONE);
-    webview_set_title(w, "Test");
-    webview_set_html(w, "set_html ok");
+    w = webview_create(true, nullptr);
     webview_navigate(w, "https://stapxs.github.io/Stapxs-QQ-Lite-2.0/");
     webview_run(w);
     return 0;
