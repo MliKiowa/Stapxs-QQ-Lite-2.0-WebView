@@ -42,6 +42,8 @@ if(_LINUX_PLATFORM_)
     pkg_check_modules(WEBKIT2 REQUIRED webkit2gtk-4.0)
     include_directories(${GTK3_INCLUDE_DIRS})
 	link_directories(${GTK3_LIBRARY_DIRS})
+    include_directories(${WEBKIT2_INCLUDE_DIRS})
+	link_directories(${WEBKIT2_LIBRARY_DIRS})
 endif()
 
 include_directories(SYSTEM "${PROJECT_SOURCE_DIR}/include/wil/include/")
