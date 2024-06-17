@@ -36,9 +36,13 @@ endif()
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     add_definitions(-D RELEASE)
 endif()
-
-include_directories(SYSTEM "${PROJECT_SOURCE_DIR}/inculde/StapxsQQWebview/")
-
+include_directories("${PROJECT_SOURCE_DIR}/include/wil/include/")
+include_directories("${PROJECT_SOURCE_DIR}/include/webview2/build/native/include/")
+include_directories("${PROJECT_SOURCE_DIR}/include/")
+include_directories("${PROJECT_SOURCE_DIR}/include/StapxsQQWebview/")
+if(_WIN_PLATFORM_)
+    link_libraries("${PROJECT_SOURCE_DIR}/include/webview2/build/native/${PLATFORM}/WebView2LoaderStatic.lib")
+endif()
 file(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/StapxsQQWebview/*.cpp")
 
 
