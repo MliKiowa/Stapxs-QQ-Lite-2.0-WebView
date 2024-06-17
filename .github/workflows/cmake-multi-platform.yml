@@ -55,7 +55,7 @@ jobs:
     - name: Install Lib (Linux)
       if: ${{ matrix.os == 'ubuntu-latest' }}
       run: >
-         sudo apt-get install libwebkit2gtk-4.0-dev -y
-         
+         apt install libgtk-3-dev libwebkit2gtk-4.0-dev
+
     - name: Build
       run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
